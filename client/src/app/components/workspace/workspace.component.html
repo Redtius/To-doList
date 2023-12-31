@@ -1,0 +1,37 @@
+<!-- app-workspace.component.html -->
+
+<main class="grid grid-flow-row m-5 min-h-screen">
+  <h1 class="text-xl font-bold my-2">
+    Tasks To Do:
+  </h1>
+  <section class="bg-gray-300 grid grid-flow-col gap-4 p-4">
+    <app-progress [tasks]="tasksByStatus('todo')" id="todo" (delete)="onDelete($event)"
+    cdkDropList
+    #todo="cdkDropList"
+    [cdkDropListData]="tasksByStatus('todo')"
+    [cdkDropListConnectedTo]="[done,progress]"
+    (cdkDropListDropped)="drop($event)"
+    >
+      <div class="Part"><h3>To Do</h3></div>
+    </app-progress>
+    <app-progress [tasks]="tasksByStatus('progress')" id="progress" (delete)="onDelete($event)"
+    cdkDropList
+    #progress="cdkDropList"
+    [cdkDropListData]="tasksByStatus('progress')"
+    [cdkDropListConnectedTo]="[todo,done]"
+    (cdkDropListDropped)="drop($event)"
+    >
+      <div class="Part"><h3>In Progress</h3></div>
+    </app-progress>
+    <app-progress [tasks]="tasksByStatus('done')" id="done" (delete)="onDelete($event)"
+    cdkDropList
+    #done="cdkDropList"
+    [cdkDropListData]="tasksByStatus('done')"
+    [cdkDropListConnectedTo]="[todo,progress]"
+    (cdkDropListDropped)="drop($event)"
+    >
+      <div class="Part"><h3>Done</h3></div>
+    </app-progress>
+  </section>
+</main>
+

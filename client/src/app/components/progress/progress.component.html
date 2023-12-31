@@ -1,0 +1,14 @@
+<div  class="container bg-gray-400 grid grid-flow-row h-full rounded-md shadow-md ">
+  <div class="px-4 pt-2 text-md text-gray-200">
+    <ng-content select=".Part"></ng-content>
+  </div>
+  <div
+    class="m-4"
+    *ngFor="let task of tasks"
+  >
+    <app-task cdkDrag [task]="task" (delete)="onDelete($event)" [cdkDragData]="task"></app-task>
+  </div>
+</div>
+
+
+
