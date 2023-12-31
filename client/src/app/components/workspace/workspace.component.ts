@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { ProgressComponent } from '../progress/progress.component';
 import { TaskRepresentation } from '../../services/representations/task.representation';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormComponent } from '../form/form.component';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-workspace',
   standalone: true,
-  imports: [ProgressComponent,DragDropModule],
+  imports: [ProgressComponent,DragDropModule,FormComponent,CommonModule],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.css'
 })
@@ -78,6 +80,11 @@ export class WorkspaceComponent {
 
   private currentTask: any;
   private currentStatus: string='';
+  private isFormOpen:boolean = false;
+
+  getFormStatus():boolean{
+    return this.isFormOpen;
+  }
 
   constructor(
   ) {}
@@ -100,6 +107,20 @@ export class WorkspaceComponent {
     this.currentTask.status=event.container.id;
     this.tasks = this.tasks.filter(task => task.id !== this.currentTask.id);
     this.tasks.push(this.currentTask);
+  }
+
+  openForm():void{
+    this.isFormOpen=true;
+  }
+
+  closeForm():void{
+    this.isFormOpen=false;
+  }
+
+  onSubmit(task:TaskRepresentation):void{
+    console.log(task);
+    this.tasks.push(task);
+    this.isFormOpen=false;
   }
 
 }

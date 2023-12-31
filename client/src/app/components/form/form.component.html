@@ -1,0 +1,25 @@
+<div class="modal">
+<div class="modal-content">
+  <div class="mb-4">
+    <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
+    <input required [(ngModel)]="task.name" type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md">
+  </div>
+
+  <div class="mb-4">
+    <label for="Description" class="block text-sm font-medium text-gray-600">Description</label>
+    <input required [(ngModel)]="task.description" type="text" id="Description" name="Description" class="mt-1 p-2 w-full border rounded-md">
+  </div>
+  <div class="mb-6">
+    <label for="message" class="block text-sm font-medium text-gray-600">Deadline</label>
+    <input required [(ngModel)]="task.deadline" type="date" name="deadline" class="mt-1 p-2 w-full border rounded-md">
+  </div>
+  <div class="flex justify-between items-center">
+    <button (click)="close()" type="button" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:ring focus:border-gray-300">
+      Cancel
+      </button>
+  <button (click)="submit()" type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300">
+    Submit
+  </button>
+</div>
+</div>
+</div>

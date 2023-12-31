@@ -1,10 +1,15 @@
-<!-- app-workspace.component.html -->
-
-<main class="grid grid-flow-row m-5 min-h-screen">
-  <h1 class="text-xl font-bold my-2">
-    Tasks To Do:
-  </h1>
-  <section class="bg-gray-300 grid grid-flow-col gap-4 p-4">
+<main class="grid grid-flow-row grid-rows-12 m-5 min-h-screen">
+  <div class="grid grid-cols-10 p-4 row-span-1">
+    <div class="col-span-3 col-start-1">
+      <h1 class="text-xl font-bold my-2">
+      Tasks To Do:
+      </h1>
+    </div>
+  <div class="col-start-9 md:col-start-10 md:col-span-1 md:text-right">
+  <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300" type="button" name="add" (click)="openForm()">Add</button>
+</div>
+</div>
+  <section class="bg-gray-300 grid grid-flow-row md:grid-flow-col gap-4 p-4 row-span-11">
     <app-progress [tasks]="tasksByStatus('todo')" id="todo" (delete)="onDelete($event)"
     cdkDropList
     #todo="cdkDropList"
@@ -34,4 +39,6 @@
     </app-progress>
   </section>
 </main>
+
+<app-form *ngIf="getFormStatus()" (closeModal)="closeForm()" (submitForm)="onSubmit($event)"></app-form>
 
