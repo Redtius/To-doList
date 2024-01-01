@@ -1,1 +1,48 @@
-<p>landingpage works!</p>
+  <body> <!-- Hero Section -->
+    <header class="bg-cover bg-center some-screen flex items-center bg-blue-500 text-white">
+      <div class="md:grid md:grid-cols-2 w-full h-full">
+        <div class="container mx-auto text-center md:text-left flex flex-col justify-center items-center">
+          <h1 class="text-7xl sm:text-8xl font-bold text-center mb-8">Become Productive You!</h1>
+          <div class="w-full flex justify-end">
+          <a routerLink="/workspace" class="bg-yellow-500 text-gray-800 hover:bg-yellow-400 py-4 px-12 rounded-full mb-4">Get Started</a>
+        </div>
+        </div>
+        <div class="hidden md:flex justify-center items-center">
+          <img class="h-1/2 w-auto" src="../../../assets/img/presentation.png" alt="presentation">
+        </div>
+      </div>
+    </header>
+
+  <!-- Features Section -->
+  <section class="py-16">
+      <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8">Key Features</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Feature 1 -->
+              <div class="p-6 bg-white rounded-lg shadow">
+                  <h3 class="text-xl font-bold mb-2">Feature 1</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <!-- Feature 2 -->
+              <div class="p-6 bg-white rounded-lg shadow">
+                  <h3 class="text-xl font-bold mb-2">Feature 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <!-- Feature 3 -->
+              <div class="p-6 bg-white rounded-lg shadow">
+                  <h3 class="text-xl font-bold mb-2">Feature 3</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8">Ready to Get Started?</h2>
+          <p class="text-lg mb-8">Sign up now and experience the awesomeness!</p>
+          <a href="#signup" class="bg-yellow-500 text-gray-800 hover:bg-yellow-400 py-2 px-4 rounded-full">Sign Up</a>
+      </div>
+  </section>
+</body>
